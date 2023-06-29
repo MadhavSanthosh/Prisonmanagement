@@ -197,7 +197,6 @@ def addprisoner():
         cblock=request.form.get('branch')
         crime=request.form.get('crime')
         date=request.form.get('date')
-        # query=db.engine.execute(f"INSERT INTO `student` (`rollno`,`sname`,`sem`,`gender`,`branch`,`email`,`number`,`address`) VALUES ('{rollno}','{sname}','{sem}','{gender}','{branch}','{email}','{num}','{address}')")
         query=Prisoner(pid=prid,pname=p_name,sen=sentence,gender=gender,block=cblock,crime=crime,date=date)
         db.session.add(query)
         db.session.commit()
