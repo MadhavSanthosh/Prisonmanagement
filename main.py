@@ -66,7 +66,7 @@ def index():
 @app.route('/prisonerdetails')
 def studentdetails():
     query=Prisoner.query.all() 
-    return render_template('studentdetails.html',query=query)
+    return render_template('prisonerdetails.html',query=query)
 
 
 @app.route('/block',methods=['POST','GET'])
