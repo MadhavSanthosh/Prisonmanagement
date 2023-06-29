@@ -99,7 +99,6 @@ def delete(id):
     post=Prisoner.query.filter_by(id=id).first()
     db.session.delete(post)
     db.session.commit()
-    # db.engine.execute(f"DELETE FROM `student` WHERE `student`.`id`={id}")
     flash("Slot Deleted Successful","danger")
     return redirect('/prisonerdetails')
 
@@ -116,7 +115,6 @@ def edit(id):
         branch=request.form.get('branch')
         crime=request.form.get('crime')
         date=request.form.get('date')
-        # query=db.engine.execute(f"UPDATE `student` SET `rollno`='{rollno}',`sname`='{sname}',`sem`='{sem}',`gender`='{gender}',`branch`='{branch}',`email`='{email}',`number`='{num}',`address`='{address}'")
         post=Prisoner.query.filter_by(id=id).first()
         post.pid=rollno
         post.pname=sname
